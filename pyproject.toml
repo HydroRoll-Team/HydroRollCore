@@ -9,7 +9,6 @@ description = "Core of HydroRoll System."
 authors = [{ name = "简律纯", email = "i@jyunko.cn" }]
 dependencies = [
     "ply>=3.11",
-    "pip>=24.0",
 ]
 requires-python = ">=3.9"
 readme = "README.rst"
@@ -19,7 +18,6 @@ license = { text = "MIT" }
 homepage = "https://core.hydroroll.team/"
 repository = "https://github.com/HydroRoll-Team/HydroRollCore"
 documentation = "https://core.hydroroll.team/"
-
 
 [tool.pdm.dev-dependencies]
 docs = [
@@ -33,6 +31,9 @@ docs = [
 ]
 lint = [
     "ruff>=0.3.0",
+]
+dev = [
+    "pip>=24.0",
 ]
 
 [tool.ruff]
@@ -97,3 +98,6 @@ skip-magic-trailing-comma = false
 
 # Like Black, automatically detect the appropriate line ending.
 line-ending = "auto"
+
+[tool.maturin]
+module-name = "hydro_roll_core.corelib"
