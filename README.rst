@@ -7,7 +7,7 @@
    :align: right
 
 
-HydroRoll-Core => 水系核心
+HydroRoll-Core <=> 水系核心
 ==========================
 
 去中心化应用程序。
