@@ -25,10 +25,10 @@ AUTHORS = ",".join([f"{aut}" for aut in AUTHOR_TABLE])
 
 project = PROJECT_NAME  # "Infini"
 release = PROJECT_VERSION  # "latest"
-copyright = "2023-PRESENT, HydroRoll-Team & AICMUniversity."
+copyright = "2023-PRESENT, HydroRoll-Team."
 author = AUTHORS  # "Hsiang Nianian"
 
-html_title = "Nivis ❄"
+html_title = "HydroRollCore"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -46,8 +46,8 @@ extensions = [
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 extlinks = {
-    "issue": ("https://github.com/HydroRoll-Team/nivis-python/%s", "issue %s"),
-    "doc": ("https://nivis.hydroroll.team/en/latest/%s", "pages/%s"),
+    "issue": ("https://github.com/HydroRoll-Team/HydroRollCore/%s", "issue %s"),
+    "doc": ("https://core.hydroroll.team/en/latest/%s", "pages/%s"),
 }
 source_suffix = {
     ".rst": "restructuredtext",
@@ -65,7 +65,7 @@ gettext_uuid = True  # optional.
 html_theme = "furo"
 html_static_path = ["../_static"]
 _html_logo = (
-    "https://cdn.jsdelivr.net/gh/HydroRoll-Team/nivis-python@main/docs/_static/logo.png"
+    "https://cdn.jsdelivr.net/gh/HydroRoll-Team/HydroRollCore@main/docs/_static/logo.png"
 )
 html_favicon = _html_logo
 
@@ -76,19 +76,19 @@ html_css_files = [
 
 html_theme_options = {
     "announcement": "<em><a href='#'>documentation</a> is still under construction now, welcome any <a href='contributing.html'>contribution</a>!</em>",
-    "source_repository": "https://github.com/HydroRoll-Team/nivis-python/",
+    "source_repository": "https://github.com/HydroRoll-Team/HydroRollCore/",
     "source_branch": "main",
     "source_directory": "docs/source/",
     "footer_icons": [
         {
             "name": "GitHub",
-            "url": "https://github.com/HydroRoll-Team/nivis-python/",
+            "url": "https://github.com/HydroRoll-Team/HydroRollCore/",
             "html": "",
             "class": "fa-brands fa-github",
         },
         {
             "name": "Pypi",
-            "url": "https://pypi.org/project/nivis-python/",
+            "url": "https://pypi.org/project/hydro_roll_core/",
             "html": "",
             "class": "fa-brands fa-python",
         },
