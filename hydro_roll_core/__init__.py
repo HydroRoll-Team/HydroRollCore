@@ -1,2 +1,1 @@
-from . import corelib
-
+from .libcore import *

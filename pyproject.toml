@@ -5,10 +5,10 @@ build-backend = "maturin"
 [project]
 name = "hydro_roll_core"
 dynamic = ["version"]
-description = "Core of HydroRoll System."
-authors = [{ name = "简律纯", email = "i@jyunko.cn" }]
+description = "Core of HydroRoll SDK."
+authors = [{ name = "简律纯", email = "leader@hydroroll.team" }]
 dependencies = [
-    "ply>=3.11",
+    "pdfquery>=0.4.3",
 ]
 requires-python = ">=3.9"
 readme = "README.rst"
@@ -22,9 +22,9 @@ documentation = "https://core.hydroroll.team/"
 [tool.pdm.dev-dependencies]
 docs = [
     "furo>=2024.1.29",
-    "sphinx-autobuild>=2024.2.4",
+    "sphinx-autobuild>=2024.4.16",
     "myst-parser>=2.0.0",
-    "sphinx>=7.2.6",
+    "sphinx>=7.3.7",
     "tomli>=2.0.1",
     "sphinx-design>=0.5.0",
     "sphinx-intl>=2.1.0",
@@ -34,6 +34,8 @@ lint = [
 ]
 dev = [
     "pip>=24.0",
+    "nox>=2024.4.15",
+    "maturin>=1.5.1",
 ]
 
 [tool.ruff]
@@ -100,4 +102,4 @@ skip-magic-trailing-comma = false
 line-ending = "auto"
 
 [tool.maturin]
-module-name = "hydro_roll_core.corelib"
+module-name = "hydro_roll_core.libcore"

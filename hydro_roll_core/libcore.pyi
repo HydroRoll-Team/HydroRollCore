@@ -1,0 +1,6 @@
+class libcore:
+    """Core library for hydro roll"""
+    def __init__(self): ...
+    def sum_as_string(self, a: int, b: int) -> str:
+        """sum two numbers and return the result as a string"""
+        ...

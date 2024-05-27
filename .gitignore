@@ -15,3 +15,8 @@ Cargo.lock
 *.pyd
 __pycache__/
 
+# docs
+_build/
+
+# rule book
+rule_book/

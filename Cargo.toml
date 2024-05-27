@@ -11,8 +11,8 @@ authors = ["HsiangNianian <i@jyunko.cn>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
-name = "hydro_roll_core"
 crate-type = ["cdylib"]
 
 [dependencies]
 pyo3 = { version = "0.19.2", features = ["abi3-py39"] }
+rand = "0.8.5"

@@ -23,7 +23,7 @@ AUTHORS = ",".join([f"{aut}" for aut in AUTHOR_TABLE])
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = PROJECT_NAME  # "Infini"
+project = PROJECT_NAME  # "HydroRollCore"
 release = PROJECT_VERSION  # "latest"
 copyright = "2023-PRESENT, HydroRoll-Team."
 author = AUTHORS  # "Hsiang Nianian"
@@ -64,9 +64,7 @@ gettext_uuid = True  # optional.
 
 html_theme = "furo"
 html_static_path = ["../_static"]
-_html_logo = (
-    "https://cdn.jsdelivr.net/gh/HydroRoll-Team/HydroRollCore@main/docs/_static/logo.png"
-)
+_html_logo = "https://cdn.jsdelivr.net/gh/HydroRoll-Team/HydroRollCore@main/docs/_static/logo.png"
 html_favicon = _html_logo
 
 html_css_files = [
@@ -75,7 +73,7 @@ html_css_files = [
 ]
 
 html_theme_options = {
-    "announcement": "<em><a href='#'>documentation</a> is still under construction now, welcome any <a href='contributing.html'>contribution</a>!</em>",
+    "announcement": "🎉 <em><a href='#'>documentation</a> is still under construction now, welcome any <a href='contributing.html'>contribution</a>!</em>",
     "source_repository": "https://github.com/HydroRoll-Team/HydroRollCore/",
     "source_branch": "main",
     "source_directory": "docs/source/",
@@ -88,7 +86,7 @@ html_theme_options = {
         },
         {
             "name": "Pypi",
-            "url": "https://pypi.org/project/hydro_roll_core/",
+            "url": "https://pypi.org/project/hydroroll-core/",
             "html": "",
             "class": "fa-brands fa-python",
         },

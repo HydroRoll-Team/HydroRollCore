@@ -1,6 +1,6 @@
 .. hide-toc: true
 
-Nivis - ❄
+HydroRollCore 
 =========
 
 .. include:: ../../README.rst

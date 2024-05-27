@@ -1,3 +1,3 @@
-Welcome to the nivis!
+Welcome to the Core!
 =====================
 
