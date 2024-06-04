@@ -16,31 +16,55 @@ HydroRoll-Core <=> 水系核心 |Structure|
 - 📚 *PDF* 生成，结合自定义 *PDF* 模板，能够生成符合需求的 *PDF* 书籍。
 - 🌏 离线文档与在线协作站点，使用 *Sphinx* 框架与 *Vue* 技术栈生成本地文档与在线站点。
 
+
 架构设计
---------
+-------
 
-核心模块 ``corelib``
+.. code-block:: mermaid
 
-包含 *CLI* 界面，用于单独使用。
-包含 *REST API* 和 *WebSocket* 通信模块，以便其他语言能够接入和与之交互。
-集成请求处理模块，确保能够处理大量请求。
+  graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
 
-规则包加载模块 ``Rule Pack Loading Module``
 
-负责读取约定式的规则包。
-利用并行处理技术，可通过Rust实现以提高性能。
+具象化模型
+----------
 
-PDF生成模块 ``PDF Generation Module``
+.. code-block:: stl
 
-将规则包作为输入，结合高度自定义的PDF模板，生成符合要求的PDF书籍。
+  solid cube_corner
+    facet normal 0.0 -1.0 0.0
+      outer loop
+        vertex 0.0 0.0 0.0
+        vertex 1.0 0.0 0.0
+        vertex 0.0 0.0 1.0
+      endloop
+    endfacet
+    facet normal 0.0 0.0 -1.0
+      outer loop
+        vertex 0.0 0.0 0.0
+        vertex 0.0 1.0 0.0
+        vertex 1.0 0.0 0.0
+      endloop
+    endfacet
+    facet normal -1.0 0.0 0.0
+      outer loop
+        vertex 0.0 0.0 0.0
+        vertex 0.0 0.0 1.0
+        vertex 0.0 1.0 0.0
+      endloop
+    endfacet
+    facet normal 0.577 0.577 0.577
+      outer loop
+        vertex 1.0 0.0 0.0
+        vertex 0.0 1.0 0.0
+        vertex 0.0 0.0 1.0
+      endloop
+    endfacet
+  endsolid
 
-文档站点生成模块 ``Documentation Site Generation Module``
-
-使用Sphinx框架生成本地在线文档站点。
-
-其他功能模块 ``Other Feature Modules``
-
-包括尚未确定的其他功能，如文档生成、数据分析等。
 
 ----
 

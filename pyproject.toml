@@ -3,7 +3,7 @@ requires = ["maturin>=1.4,<2.0"]
 build-backend = "maturin"
 
 [project]
-name = "hydro_roll_core"
+name = "hydro-roll-core"
 dynamic = ["version"]
 description = "Core of HydroRoll SDK."
 authors = [{ name = "简律纯", email = "leader@hydroroll.team" }]
@@ -12,7 +12,7 @@ dependencies = [
 ]
 requires-python = ">=3.9"
 readme = "README.rst"
-license = { text = "MIT" }
+license = { text = " AGPL-3.0" }
 
 [project.urls]
 homepage = "https://core.hydroroll.team/"
