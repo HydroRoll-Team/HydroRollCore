@@ -29,9 +29,6 @@ HydroRoll-Core <=> 水系核心 |Structure|
     C-->D;
 
 
-具象化模型
-----------
-
 .. code-block:: stl
 
   solid cube_corner
