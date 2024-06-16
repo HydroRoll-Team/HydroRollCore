@@ -1,6 +1,6 @@
 [package]
-name = "hydro_roll_core"
-version = "0.0.1-alpha.1"
+name = "hydro-roll-core"
+version = "0.0.2-alpha.1"
 edition = "2021"
 description = "Core Lib for HydroRoll System."
 license = "MIT"
@@ -15,4 +15,5 @@ crate-type = ["cdylib"]
 
 [dependencies]
 pyo3 = { version = "0.19.2", features = ["abi3-py39"] }
+clap = { version = "4.0", features = ["derive"] }
 rand = "0.8.5"
