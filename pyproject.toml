@@ -38,6 +38,10 @@ dev = [
     "maturin>=1.5.1",
 ]
 
+[project.scripts]
+hrc = "hydro_roll_core.cli:Cli"
+hydrorollcore = "hydro_roll_core.cli:Cli"
+
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
 exclude = [

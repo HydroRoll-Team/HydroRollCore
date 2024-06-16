@@ -1,3 +1,4 @@
 {
-    "restructuredtext.preview.name": "sphinx"
+    "restructuredtext.preview.name": "sphinx",
+    "iis.configDir": ""
 }
