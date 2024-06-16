@@ -1,5 +1,6 @@
 import argparse
 
+
 class Cli(object):
     parser = argparse.ArgumentParser(description="水系核心终端")
 

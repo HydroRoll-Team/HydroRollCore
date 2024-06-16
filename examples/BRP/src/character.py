@@ -2,6 +2,7 @@ import inspect
 from hydro_roll_core.development import Character
 from typing import Literal, List, Tuple, Union, Dict, Generic, Optional, TYPE_CHECKING
 
+
 class Identity:
     """
     身份
@@ -613,16 +614,13 @@ class Skills:
         """
 
 
-class Weapons:
-    ...
+class Weapons: ...
 
 
-class Armor:
-    ...
+class Armor: ...
 
 
-class Equipment:
-    ...
+class Equipment: ...
 
 
 class BRPCharacter(Character):
