@@ -19,25 +19,6 @@ homepage = "https://core.hydroroll.team/"
 repository = "https://github.com/HydroRoll-Team/HydroRollCore"
 documentation = "https://core.hydroroll.team/"
 
-[tool.pdm.dev-dependencies]
-docs = [
-    "furo>=2024.1.29",
-    "sphinx-autobuild>=2024.4.16",
-    "myst-parser>=2.0.0",
-    "sphinx>=7.3.7",
-    "tomli>=2.0.1",
-    "sphinx-design>=0.5.0",
-    "sphinx-intl>=2.1.0",
-]
-lint = [
-    "ruff>=0.3.0",
-]
-dev = [
-    "pip>=24.0",
-    "nox>=2024.4.15",
-    "maturin>=1.5.1",
-]
-
 [project.scripts]
 hrc = "hydro_roll_core.cli:Cli"
 hydrorollcore = "hydro_roll_core.cli:Cli"
@@ -107,3 +88,22 @@ line-ending = "auto"
 
 [tool.maturin]
 module-name = "hydro_roll_core.libcore"
+
+[tool.pdm.dev-dependencies]
+docs = [
+    "furo>=2024.1.29",
+    "sphinx-autobuild>=2024.4.16",
+    "myst-parser>=2.0.0",
+    "sphinx>=7.3.7",
+    "tomli>=2.0.1",
+    "sphinx-design>=0.5.0",
+    "sphinx-intl>=2.1.0",
+]
+lint = [
+    "ruff>=0.3.0",
+]
+dev = [
+    "nox>=2024.4.15",
+    "maturin>=1.5.1",
+]
+
