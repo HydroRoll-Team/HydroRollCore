@@ -20,8 +20,8 @@ repository = "https://github.com/HydroRoll-Team/HydroRollCore"
 documentation = "https://core.hydroroll.team/"
 
 [project.scripts]
-hrc = "hydro_roll_core.cli:Cli"
-hydrorollcore = "hydro_roll_core.cli:Cli"
+hrc = "hrc.cli:Cli"
+hydrorollcore = "hrc.cli:Cli"
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
@@ -87,7 +87,7 @@ skip-magic-trailing-comma = false
 line-ending = "auto"
 
 [tool.maturin]
-module-name = "hydro_roll_core.libcore"
+module-name = "hrc.LibCore"
 
 [tool.pdm.dev-dependencies]
 docs = [

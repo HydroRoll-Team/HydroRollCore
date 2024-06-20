@@ -1,8 +1,8 @@
 import dataclasses
 from dataclasses import dataclass
 from typing import Literal, Optional, Union
-from typing_extensions import override
 
+from . import JudgeRule
 
 @dataclass
 class CharacterCard(object):

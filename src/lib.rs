@@ -9,7 +9,7 @@ fn process_rule_pack(rule_pack: &str) -> PyResult<String> {
 
 /// A Python module implemented in Rust.
 #[pymodule]
-#[pyo3(name = "libcore")]
+#[pyo3(name = "LibCore")]
 fn libcore(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(process_rule_pack, m)?)?;
     Ok(())
