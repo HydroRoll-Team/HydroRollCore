@@ -79,7 +79,7 @@ Core' 水系核心 |Structure|
 .. _简律纯: https://github.com/HsiangNianian
 .. _HydroRoll-Team: https://github.com/HydroRoll-Team
 
-.. image lsit above:
+.. image list above:
 .. |Structure| image:: https://images.repography.com/39938419/HydroRoll-Team/HydroRollCore/structure/tMt9z2RexIQ8rnXCIMFWe7YTZtx9reheQCtxqgPqZ1Q/XERnotqf4h5EPFL215lPSb7Dk3fQ5EUniRD-gEckW3M_table.svg
    :alt: Structure
    :target: https://github.com/HydroRoll-Team/HydroRollCore
