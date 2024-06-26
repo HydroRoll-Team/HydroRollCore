@@ -1,6 +1,8 @@
 Core' 水系核心 |Structure|
 =======================================
 
+|HydroRollCoreIcon| |Documentation Status| |release_status| |community| |ruff|
+
 去中心化应用程序。
 
   📕 水系核心是骰系去中心化的一种解决方案，提供了强大的 TRPG 规则书处理功能。
@@ -84,9 +86,21 @@ Core' 水系核心 |Structure|
    :alt: Structure
    :target: https://github.com/HydroRoll-Team/HydroRollCore
    :width: 60
-
-.. image list above:
 .. |license icon| image:: https://app.fossa.com/api/projects/git%2Bgithub.com%2FHydroRoll-Team%2FHydroRollCore.svg?type=shield&issueType=license
    :target: https://app.fossa.com/projects/git%2Bgithub.com%2FHydroRoll-Team%2FHydroRollCore?ref=badge_shield&issueType=license
 .. |FOSSA Status| image:: https://app.fossa.com/api/projects/git%2Bgithub.com%2FHydroRoll-Team%2FHydroRollCore.svg?type=large&issueType=license
    :target: https://app.fossa.com/projects/git%2Bgithub.com%2FHydroRoll-Team%2FHydroRollCore?ref=badge_large&issueType=license
+.. |HydroRollCoreIcon| image:: https://img.shields.io/pypi/v/hydro_roll_core?style=flat&label=HydroRollCore&color=green
+   :target: https://pypi.org/project/hydro_roll_core
+.. |Documentation Status| image:: https://readthedocs.org/projects/hydrorollcore/badge/?version=latest
+   :target: https://core.hydroroll.team/zh-cn/latest/?badge=latest
+.. |crates_v| image:: https://img.shields.io/crates/v/hydro_roll_core?logo=rust&color=red
+   :target: https://crates.io/crates/hydro_roll_core
+.. |release_status| image:: https://github.com/HydroRoll-Team/HydroRollCore/actions/workflows/release.yml/badge.svg
+   :target: https://github.com/HydroRoll-Team/HydroRollCore/actions/workflows/release.yml
+.. |community| image:: https://img.shields.io/badge/论坛-002fa7.svg?logo=github&labelColor=gray&logoWidth=20&logoColor=white&style=flat-square
+   :target: https://github.com/orgs/HydroRoll-Team/discussions
+   :alt: Join The Community
+.. |ruff| image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
+   :target: https://github.com/astral-sh/ruff
+   :alt: Ruff
