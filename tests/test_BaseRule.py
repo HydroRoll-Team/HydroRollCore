@@ -57,13 +57,31 @@ __rule_book__ = "BASIC ROLEPLAYING"
 # ==============================================
 
 # MyRule
-from hrc.rules.BaseRule import JudgeRule
+import hrc
+from hrc.rules import BaseRule, Rules
+from hrc.rules.BaseRule import CharacterCard, JudgeRule
+
 
 class JudgeAttr(JudgeRule.Attribute):
-    """来自判定规则 - 属性判定
-
-    属性判定规则(模式)"""
+    """属性判定规则"""
 
 
 class JudgeCustom(JudgeRule.Custom):
-    ...
+    """自定义判定规则"""
+
+
+class ChaAttr(CharacterCard.Attribute):
+    """人物卡属性列表"""
+
+
+class ChaSkill(CharacterCard.Skill):
+    """人物卡技能列表"""
+
+
+class ThePool(Rules[JudgeAttr, JudgeCustom]):
+    """规则包[池]"""
+
+    __config__ = 'ThePool'
+    
+    
+ 

@@ -3,18 +3,7 @@ from dataclasses import dataclass
 from typing import Literal, Optional, Union
 
 from . import JudgeRule
-
-@dataclass
-class CharacterCard(object):
-    """Docstring for CharacterCard."""
-    property: type
-
-    class Information(object):
-        age:  Optional[Union[int, str]]
-        race: Optional[str]
-        gender: Optional[str]
-        group: Optional[str]
-
+from . import CharacterCard
 
 @dataclass
 class CustomRule(object):

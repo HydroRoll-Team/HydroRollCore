@@ -1,7 +1,7 @@
 .. hide-toc: true
 
 HydroRollCore 
-=========
+==============
 
 .. include:: ../../README.rst
    :start-after: .. index-start
@@ -11,13 +11,13 @@ HydroRollCore
 .. toctree::
     :hidden:
 
-    Quick start <pages/quick-start.rst>
+    快速开始 <pages/quick-start.rst>
 
 
 .. toctree::
     :caption: Development
     :hidden:
 
-    CONTRIBUTING <pages/development/contributing.rst>
-    CHANGELOG <changelog.rst>
+    贡献指南 <pages/contributing.rst>
+    变更日志 <changelog.rst>
     COPYING <COPYING.rst>
