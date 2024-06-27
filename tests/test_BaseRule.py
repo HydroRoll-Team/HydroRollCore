@@ -24,8 +24,6 @@ __rule_book__ = "BASIC ROLEPLAYING"
 
 # 不同的大类(举例)
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#
-
 
 # 规则包剖析
 
@@ -42,46 +40,11 @@ __rule_book__ = "BASIC ROLEPLAYING"
 # 战役
 # 模组
 
-# 判定规则
-# - 属性|判定 规则
-# - 技能判定规则
-# - 自定义类判定规则
-
-# 人物卡
-# - 属性列表*
-# - 技能列表*
+# 人物卡 - CharacterCard
+# - 属性: 列表、判定
+# - 技能: 列表、判定
 # - 人物塑造
 # - 姓名、年龄、种族、阵营
-
+# - 自定义判定列表
 
 # ==============================================
-
-# MyRule
-import hrc
-from hrc.rules import BaseRule, Rules
-from hrc.rules.BaseRule import CharacterCard, JudgeRule
-
-
-class JudgeAttr(JudgeRule.Attribute):
-    """属性判定规则"""
-
-
-class JudgeCustom(JudgeRule.Custom):
-    """自定义判定规则"""
-
-
-class ChaAttr(CharacterCard.Attribute):
-    """人物卡属性列表"""
-
-
-class ChaSkill(CharacterCard.Skill):
-    """人物卡技能列表"""
-
-
-class ThePool(Rules[JudgeAttr, JudgeCustom]):
-    """规则包[池]"""
-
-    __config__ = 'ThePool'
-    
-    
- 

@@ -9,3 +9,4 @@ from ..typing import RulesT
 class Rules(ABC, Generic[RulesT]):
     ...
     
+    
