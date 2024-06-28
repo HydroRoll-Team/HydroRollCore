@@ -2,6 +2,7 @@ from typing import Set, Union
 
 from pydantic import BaseModel, ConfigDict, DirectoryPath, Field
 
+
 class ConfigModel(BaseModel):
     model_config = ConfigDict(extra="allow")
 

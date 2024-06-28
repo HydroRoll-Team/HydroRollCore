@@ -1,6 +1,6 @@
 import inspect
-from hydro_roll_core.development import Character
-from typing import Literal, List, Tuple, Union, Dict, Generic, Optional, TYPE_CHECKING
+from hrc.development import Character
+from typing import Literal, Union, Optional
 
 
 class Identity:

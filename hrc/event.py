@@ -5,6 +5,7 @@ from typing_extensions import Self
 from pydantic import BaseModel, ConfigDict
 from .typing import RuleT
 
+
 class Event(ABC, BaseModel, Generic[RuleT]):
     model_config = ConfigDict(extra="allow")
 

@@ -1,29 +1,27 @@
-import functools
+import functools  # noqa: F401
 from typing import Generic, Any, Type
 
 from abc import ABC
 
-from . import BaseRule
-from ..typing import RuleT
+from . import BaseRule  # noqa: F401
+from ..typing import RuleT  # noqa: F401
 
 import inspect
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from enum import Enum
 from typing import (
     TYPE_CHECKING,
-    Any,
     ClassVar,
-    Generic,
     NoReturn,
     Optional,
     Tuple,
-    Type,
     cast,
     final,
 )
 from typing_extensions import Annotated, get_args, get_origin
 
 from ..config import ConfigModel
+
 # from ..dependencies import Depends
 from ..event import Event
 from ..exceptions import SkipException, StopException
@@ -56,7 +54,7 @@ class Rule(ABC, Generic[EventT, StateT, ConfigT]):
     if TYPE_CHECKING:
         event: EventT
     else:
-        event = Depends(Event)
+        event = Depends(Event)  # noqa: F821
 
     def __init_state__(self) -> Optional[StateT]:
         """Initialize rule state."""
@@ -163,4 +161,5 @@ def aliases(names, ignore_case=False):
         func._aliases = names
         func._ignore_case = ignore_case
         return func
+
     return decorator

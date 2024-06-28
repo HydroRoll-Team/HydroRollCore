@@ -38,12 +38,7 @@ from .utils import (
     samefile,
     wrap_get_func,
 )
-from .exceptions import (
-    StopException,
-    SkipException,
-    GetEventTimeout,
-    LoadModuleError
-)
+from .exceptions import StopException, SkipException, GetEventTimeout, LoadModuleError
 
 
 if sys.version_info >= (3, 11):  # pragma: no cover
@@ -58,11 +53,10 @@ HANDLED_SIGNALS = (
 
 
 class Core:
-
     should_exit: asyncio.Event
     rules_priority_dict: Dict[int, List[Type[Rule[Any, Any, Any]]]]
 
-    _condition: (asyncio.Condition)
+    _condition: asyncio.Condition
     _current_event: Optional[Event[Any]]
     _restart_flag: bool
     _module_path_finder: ModulePathFinder
@@ -159,7 +153,7 @@ class Core:
 
         hot_reload_task = None
         if self._hot_reload:  # pragma: no cover
-            hot_reload_task = asyncio.create_task(self._run_hot_reload())
+            hot_reload_task = asyncio.create_task(self._run_hot_reload())  # noqa: F841
 
         for core_run_hook_func in self._core_run_hooks:
             await core_run_hook_func(self)
@@ -184,8 +178,7 @@ class Core:
             for rule_ in _removed_rules:
                 rules.remove(rule_)
                 logger.info(
-                    "Succeeded to remove rule "
-                    f'"{rule_.__name__}" from file "{file}"'
+                    "Succeeded to remove rule " f'"{rule_.__name__}" from file "{file}"'
                 )
         return removed_rules
 
@@ -284,8 +277,7 @@ class Core:
                         config_class,
                         default_value,
                     )
-            config_model = create_model(
-                name, **config_update_dict, __base__=base)
+            config_model = create_model(name, **config_update_dict, __base__=base)
             return config_model, config_model()
 
         self.config = create_model(
@@ -352,25 +344,20 @@ class Core:
         show_log: bool = True,
     ) -> None:
         if show_log:
-            logger.info(
-                f"Rule {current_event.rule.name} received: {current_event!r}"
-            )
+            logger.info(f"Rule {current_event.rule.name} received: {current_event!r}")
 
         if handle_get:
             _handle_event_task = asyncio.create_task(self._handle_event())
             self._handle_event_tasks.add(_handle_event_task)
-            _handle_event_task.add_done_callback(
-                self._handle_event_tasks.discard)
+            _handle_event_task.add_done_callback(self._handle_event_tasks.discard)
             await asyncio.sleep(0)
             async with self._condition:
                 self._current_event = current_event
                 self._condition.notify_all()
         else:
-            _handle_event_task = asyncio.create_task(
-                self._handle_event(current_event))
+            _handle_event_task = asyncio.create_task(self._handle_event(current_event))
             self._handle_event_tasks.add(_handle_event_task)
-            _handle_event_task.add_done_callback(
-                self._handle_event_tasks.discard)
+            _handle_event_task.add_done_callback(self._handle_event_tasks.discard)
 
     async def _handle_event(self, current_event: Optional[Event[Any]] = None) -> None:
         if current_event is None:
@@ -385,9 +372,7 @@ class Core:
             await _hook_func(current_event)
 
         for rule_priority in sorted(self.rules_priority_dict.keys()):
-            logger.debug(
-                f"Checking for matching rules with priority {rule_priority!r}"
-            )
+            logger.debug(f"Checking for matching rules with priority {rule_priority!r}")
             stop = False
             for rule in self.rules_priority_dict[rule_priority]:
                 try:
@@ -427,8 +412,7 @@ class Core:
     @overload
     async def get(
         self,
-        func: Optional[Callable[[Event[Any]],
-                                Union[bool, Awaitable[bool]]]] = None,
+        func: Optional[Callable[[Event[Any]], Union[bool, Awaitable[bool]]]] = None,
         *,
         event_type: None = None,
         max_try_times: Optional[int] = None,
@@ -438,8 +422,7 @@ class Core:
     @overload
     async def get(
         self,
-        func: Optional[Callable[[EventT],
-                                Union[bool, Awaitable[bool]]]] = None,
+        func: Optional[Callable[[EventT], Union[bool, Awaitable[bool]]]] = None,
         *,
         event_type: None = None,
         max_try_times: Optional[int] = None,
@@ -449,8 +432,7 @@ class Core:
     @overload
     async def get(
         self,
-        func: Optional[Callable[[EventT],
-                                Union[bool, Awaitable[bool]]]] = None,
+        func: Optional[Callable[[EventT], Union[bool, Awaitable[bool]]]] = None,
         *,
         event_type: Type[EventT],
         max_try_times: Optional[int] = None,
@@ -564,8 +546,7 @@ class Core:
                 module_name, Rule, reload=reload
             )
         except ImportError as e:
-            self.error_or_exception(
-                f'Import module "{module_name}" failed:', e)
+            self.error_or_exception(f'Import module "{module_name}" failed:', e)
         else:
             for rule_class, module in rule_classes:
                 self._load_rule_class(
@@ -638,9 +619,7 @@ class Core:
             except Exception as e:
                 self.error_or_exception(f'Load rule "{rule_}" failed:', e)
 
-    def load_rules(
-        self, *rules: Union[Type[Rule[Any, Any, Any]], str, Path]
-    ) -> None:
+    def load_rules(self, *rules: Union[Type[Rule[Any, Any, Any]], str, Path]) -> None:
         self._extend_plugins.extend(rules)
 
         return self._load_plugins(*rules)
