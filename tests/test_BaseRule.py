@@ -48,3 +48,6 @@ __rule_book__ = "BASIC ROLEPLAYING"
 # - 自定义判定列表
 
 # ==============================================
+
+from hrc.rule import BaseRule
+

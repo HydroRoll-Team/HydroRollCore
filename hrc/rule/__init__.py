@@ -4,13 +4,7 @@ from typing import Generic, Any, Type
 from abc import ABC
 
 from . import BaseRule
-from ..typing import RulesT
-
-
-"""iamai 插件。
-
-所有 iamai 插件的基类。所有用户编写的插件必须继承自 `Plugin` 类。
-"""
+from ..typing import RuleT
 
 import inspect
 from abc import ABC, abstractmethod
@@ -30,7 +24,7 @@ from typing import (
 from typing_extensions import Annotated, get_args, get_origin
 
 from ..config import ConfigModel
-from ..dependencies import Depends
+# from ..dependencies import Depends
 from ..event import Event
 from ..exceptions import SkipException, StopException
 from ..typing import ConfigT, EventT, StateT
