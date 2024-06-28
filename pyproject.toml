@@ -10,6 +10,7 @@ authors = [{ name = "简律纯", email = "leader@hydroroll.team" }]
 dependencies = [
     "pdfquery>=0.4.3",
     "pydantic>=2.7.4",
+    "loguru>=0.7.2",
 ]
 requires-python = ">=3.9"
 readme = "README.rst"

@@ -15,10 +15,10 @@ async def auto_card(_event='T_Event'):
 
 
 async def overview_card(pc: player_card):
-    max_hp = math.floor((pc.get('CON', 0) + pc.get('SIZ', 0) / 10)
-    max_san=math.floor(99 - pc.get('CM', 0))
-    mp=pc.get('MP', 0)
-    mp_show=" mp" + str(mp) + "/" + str(
-            math.floor(pc.get('POW', 0) / 5)
-                        ) if mp and mp != math.floor(pc.get('POW', 0) / 5) else ""
+    max_hp = math.floor((pc.get('CON', 0) + pc.get('SIZ', 0) / 10))
+    max_san = math.floor(99 - pc.get('CM', 0))
+    mp = pc.get('MP', 0)
+    mp_show = " mp" + str(mp) + "/" + str(
+        math.floor(pc.get('POW', 0) / 5)
+    ) if mp and mp != math.floor(pc.get('POW', 0) / 5) else ""
     return pc.get('__Name', "") + " hp" + str(pc.get('HP', max_hp)) + "/" + str(max_hp) + " san" + str(pc.get('SAN', "?")) + "/" + str(max_san) + mp_show + " DEX" + str(pc.get('DEX', "?"))
