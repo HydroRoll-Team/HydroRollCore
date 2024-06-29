@@ -105,7 +105,7 @@ class Rule(ABC, Generic[EventT, StateT, ConfigT]):
     @property
     def core(self) -> "Core":
         """core object."""
-        return self.event.bot  # pylint: disable=no-member
+        return self.event.core  # pylint: disable=no-member
 
     @final
     @property
@@ -133,19 +133,19 @@ class Rule(ABC, Generic[EventT, StateT, ConfigT]):
 
     @property
     def state(self) -> StateT:
-        """plugin status."""
-        return self.bot.plugin_state[self.name]
+        """rule status."""
+        return self.core.rule_state[self.name]
 
     @state.setter
     @final
     def state(self, value: StateT) -> None:
-        self.bot.plugin_state[self.name] = value
+        self.core.rule_state[self.name] = value
 
     @abstractmethod
     async def handle(self) -> None:
         """Method to handle events. iamai will call this method when the ``rule()`` method returns ``True``. Each plugin must implement this method."""
         raise NotImplementedError
-
+  
     @abstractmethod
     async def rule(self) -> bool:
         """Method to match the event. When the event is processed, this method will be called in sequence according to the priority of the plugin. When this method returns ``True``, the event will be handed over to this plugin for processing. Each plugin must implement this method.
