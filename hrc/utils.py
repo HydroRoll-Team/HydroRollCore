@@ -82,14 +82,6 @@ class ModulePathFinder(MetaPathFinder):
 
 
 def is_config_class(config_class: Any) -> TypeGuard[Type[ConfigModel]]:
-    """Determine whether an object is a configuration class.
-
-    Args:
-        config_class: The object to be judged.
-
-    Returns:
-        Returns whether it is a configuration class.
-    """
     return (
         inspect.isclass(config_class)
         and issubclass(config_class, ConfigModel)

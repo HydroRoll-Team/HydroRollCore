@@ -1,41 +1,52 @@
 import math
 
 from hrc import Core, player_card
+from hrc.rule import Rule, BaseRule
+from hrc.dependencies import Depends
+
+from .Character import Attributes
+from .Wiki import Wiki
 
 core = Core()
 
 
-@core.event_post_processor_hook
-async def auto_card(_event="T_Event"):
-    g = core.session
-    pc = player_card
-    if g and core.session.gid and g.ac:
-        if hasattr(pc.trans, "生命") or hasattr(pc.trans, "理智"):
-            core.session.call(
-                "set_group_card", pc.gid, f"card#{pc.uid}", await overview_card(pc.char)
-            )
+class COC7(Rule):
+    
+    attr: Attributes = Depends() # 必须实现一个继承自 Character.Attribute 的类
+    wiki: Wiki = Depends() # 可选实现一个 Wiki
+    
+    @core.event_post_processor_hook
+    async def auto_card(self):
+        if self.session and self.session.gid and self.ac:
+            if hasattr(self.pc.trans, "生命") or hasattr(self.pc.trans, "理智"):
+                self.event.call_back(
+                    "set_group_card", self.pc.gid, f"card#{self.pc.uid}", await self.overview_card()
+                )
+
+    async def overview_card(self):
+        max_hp = math.floor((self.pc.get("CON", 0) + self.pc.get("SIZ", 0) / 10))
+        max_san = math.floor(99 - self.pc.get("CM", 0))
+        mp = self.pc.get("MP", 0)
+        mp_show = (
+            " mp" + str(mp) + "/" + str(math.floor(self.pc.get("POW", 0) / 5))
+            if mp and mp != math.floor(self.pc.get("POW", 0) / 5)
+            else ""
+        )
+        return (
+            self.pc.get("__Name", "")
+            + " hp"
+            + str(self.pc.get("HP", max_hp))
+            + "/"
+            + str(max_hp)
+            + " san"
+            + str(self.pc.get("SAN", "?"))
+            + "/"
+            + str(max_san)
+            + mp_show
+            + " DEX"
+            + str(self.pc.get("DEX", "?"))
+        )
 
 
-async def overview_card(pc: player_card):
-    max_hp = math.floor((pc.get("CON", 0) + pc.get("SIZ", 0) / 10))
-    max_san = math.floor(99 - pc.get("CM", 0))
-    mp = pc.get("MP", 0)
-    mp_show = (
-        " mp" + str(mp) + "/" + str(math.floor(pc.get("POW", 0) / 5))
-        if mp and mp != math.floor(pc.get("POW", 0) / 5)
-        else ""
-    )
-    return (
-        pc.get("__Name", "")
-        + " hp"
-        + str(pc.get("HP", max_hp))
-        + "/"
-        + str(max_hp)
-        + " san"
-        + str(pc.get("SAN", "?"))
-        + "/"
-        + str(max_san)
-        + mp_show
-        + " DEX"
-        + str(pc.get("DEX", "?"))
-    )
+print(COC7)
+print(COC7.attr)

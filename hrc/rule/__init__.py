@@ -155,11 +155,11 @@ class Rule(ABC, Generic[EventT, StateT, ConfigT]):
         """
         raise NotImplementedError
 
+    @staticmethod
+    def aliases(names, ignore_case=False):
+        def decorator(func):
+            func._aliases = names
+            func._ignore_case = ignore_case
+            return func
 
-def aliases(names, ignore_case=False):
-    def decorator(func):
-        func._aliases = names
-        func._ignore_case = ignore_case
-        return func
-
-    return decorator
+        return decorator
