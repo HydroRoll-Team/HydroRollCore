@@ -514,8 +514,7 @@ class Core:
             for _rule in self.rules:
                 if _rule.__name__ == rule_class.__name__:
                     logger.warning(
-                        f'Already have a same name rule pack "{
-                            _rule.__name__}"'
+                        f'Already have a same name rule pack "{_rule.__name__}"'
                     )
             rule_class.__rule_load_type__ = rule_load_type
             rule_class.__rule_file_path__ = rule_file_path

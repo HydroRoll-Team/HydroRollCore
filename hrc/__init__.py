@@ -1,7 +1,7 @@
 from .LibCore import *  # noqa: F403
 
 from . import rule  # noqa: F401
-from .core import Core  # noqa: F401
+from . import core  # noqa: F401
 from . import log  # noqa: F401
 from . import exceptions  # noqa: F401
 from . import config  # noqa: F401
