@@ -1,7 +1,7 @@
 import math
 
 from hrc.core import Core
-from hrc.rule import Rule, BaseRule
+from hrc.rule import Rule, BaseRule  # noqa: F401
 from hrc.dependencies import Depends
 
 from .Character import Attributes
