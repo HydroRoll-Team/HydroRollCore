@@ -638,7 +638,7 @@ class Core:
         self._extend_rule_dirs.extend(dirs)
         self._load_rules_from_dirs(*dirs)
 
-    def get_plugin(self, name: str) -> Type[Rule[Any, Any, Any]]:
+    def get_rule(self, name: str) -> Type[Rule[Any, Any, Any]]:
         for _rule in self.rules:
             if _rule.__name__ == name:
                 return _rule
