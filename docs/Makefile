@@ -9,6 +9,7 @@ SOURCEDIR     = source
 BUILDDIR      = _build
 SPHINXINTL    ?= sphinx-intl 
 lang		  ?= zh_CN
+SPHINX 		  ?= sphinx
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -24,3 +25,7 @@ help:
 # update translation command
 translate:
 	@$(SPHINXINTL) update -p ./build/gettext -l $(lang) $(O)
+
+# build docs
+docs build:
+	@pdm run $(SPHINXBUILD) "$(SOURCEDIR)" "$(BUILDDIR)" $(O)

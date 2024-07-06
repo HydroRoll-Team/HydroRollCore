@@ -11,13 +11,15 @@ HydroRollCore
 .. toctree::
     :hidden:
 
+
     快速开始 <pages/quick-start.rst>
 
 
 .. toctree::
-    :caption: Development
-    :hidden:
+   :caption: Development
+   :hidden:
+
 
     贡献指南 <pages/contributing.rst>
-    变更日志 <changelog.rst>
-    COPYING <COPYING.rst>
+    变更日志 <changelog>
+    COPYING <COPYING>
