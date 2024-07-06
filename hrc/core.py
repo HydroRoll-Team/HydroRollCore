@@ -69,6 +69,12 @@ class Core:
     _condition: (
         asyncio.Condition
     )  # Condition used to handle get # pyright: ignore[reportUninitializedInstanceVariable]
+    _rule_tasks: Set[
+        "asyncio.Task[None]"
+    ]  # Adapter task collection, used to hold references to adapter tasks
+    _handle_event_tasks: Set[
+        "asyncio.Task[None]"
+    ]  # Event handling task, used to keep a reference to the adapter task
 
     def __init__(
         self,
@@ -85,7 +91,12 @@ class Core:
         self._restart_flag = False
         self._module_path_finder = ModulePathFinder()
         self.rules_priority_dict = defaultdict(list)
+        self._raw_config_dict = {}
+        self._rule_tasks = set()
+        self._handle_event_tasks = set()
         
+        self._extend_rules = []
+        self._extend_rule_dirs = []
         self._core_run_hooks = []
         self._core_exit_hooks = []
         self._rule_enable_hooks = []
