@@ -4,23 +4,23 @@ import pkgutil
 import signal
 import sys
 import threading
-import time
+import time  # noqa: F401
 from collections import defaultdict
 from contextlib import AsyncExitStack
 from itertools import chain
 from pathlib import Path
 from typing import (
     Any,
-    Awaitable,
-    Callable,
+    Awaitable,  # noqa: F401
+    Callable,  # noqa: F401
     Dict,
     List,
     Optional,
-    Set,
+    Set,  # noqa: F401
     Tuple,
     Type,
     Union,
-    overload,
+    overload,  # noqa: F401
 )
 
 from pydantic import ValidationError, create_model
@@ -30,15 +30,15 @@ from .dependencies import solve_dependencies
 from .log import logger
 from .rule import Rule, RuleLoadType
 from .event import Event
-from .typing import CoreHook, EventHook, EventT, RuleHook
+from .typing import CoreHook, EventHook, EventT, RuleHook  # noqa: F401
 from .utils import (
     ModulePathFinder,
     get_classes_from_module_name,
     is_config_class,
     samefile,
-    wrap_get_func,
+    wrap_get_func,  # noqa: F401
 )
-from .exceptions import StopException, SkipException, GetEventTimeout, LoadModuleError
+from .exceptions import StopException, SkipException, GetEventTimeout, LoadModuleError  # noqa: F401
 
 
 if sys.version_info >= (3, 11):  # pragma: no cover
