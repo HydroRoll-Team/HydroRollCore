@@ -180,8 +180,8 @@ class Core:
                 await hot_reload_task
         finally:
             for _rule in self.rules:
-                for rule_shutdown_hook_func in self._rule_shutdown_hooks:
-                    await rule_shutdown_hook_func(_rule)
+                for rule_disable_hook_func in self._rule_disable_hooks:
+                    await rule_disable_hook_func(_rule)
                 await _rule.disable()
 
             while self._rule_tasks:
