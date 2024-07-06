@@ -16,4 +16,5 @@ RuleT = TypeVar("RuleT", bound="Rule[Any, Any, Any]")
 ConfigT = TypeVar("ConfigT", bound=Optional["ConfigModel"])
 
 CoreHook = Callable[["Core"], Awaitable[None]]
+RuleHook = Callable[["Rule"], Awaitable[None]]
 EventHook = Callable[["Event[Any]"], Awaitable[None]]

@@ -15,7 +15,7 @@ class COC7(Rule):
     attr: Attributes = Depends() # 必须实现一个继承自 Character.Attribute 的子类
     wiki: Wiki = Depends() # 可选实现一个 Wiki 类
     
-    @core.event_post_processor_hook
+    @core.event_postprocessor_hook
     async def auto_card(self):
         if self.session and self.session.gid and self.ac:
             if hasattr(self.pc.trans, "生命") or hasattr(self.pc.trans, "理智"):

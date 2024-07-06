@@ -4,9 +4,10 @@ import math
 from typing import Union
 from dataclasses import dataclass
 
-from hrc.rule import aliases
+from hrc.rule import Rule
 from hrc.rule.BaseRule import CharacterCard
 
+aliases = Rule.aliases
 
 @dataclass
 class Attributes(CharacterCard.Attribute):
