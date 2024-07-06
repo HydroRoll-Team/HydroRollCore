@@ -141,7 +141,7 @@ class Core:
 
         hot_reload_task = None
         if self._hot_reload:  # pragma: no cover
-            hot_reload_task = asyncio.create_task(self._run_core_reload())
+            hot_reload_task = asyncio.create_task(self._run_hot_reload())
 
         for core_run_hook_func in self._core_run_hooks:
             await core_run_hook_func(self)
