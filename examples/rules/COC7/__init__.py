@@ -12,8 +12,10 @@ core = Core()
 
 class COC7(Rule):
     
-    attr: Attributes = Depends() # 必须实现一个继承自 Character.Attribute 的子类
-    wiki: Wiki = Depends() # 可选实现一个 Wiki 类
+    # 规则、指令、词条，必须至少实现任意一个
+    attr: Attributes = Depends() # CharacterCard.Attribute
+    wiki: Wiki = Depends() # Wiki
+    cmd: Command = Depends() # Command
     
     @core.event_postprocessor_hook
     async def auto_card(self):

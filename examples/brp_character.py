@@ -1,5 +1,5 @@
 import inspect
-from hrc.development import Character
+from hrc.dev import Character
 from typing import Literal, Union, Optional
 
 
