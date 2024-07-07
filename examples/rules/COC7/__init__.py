@@ -6,17 +6,18 @@ from hrc.dependencies import Depends
 
 from .Character import Attributes
 from .Wiki import Wiki
+from .Command import Command
 
 core = Core()
 
 
 class COC7(Rule):
-    
+
     # 规则、指令、词条，必须至少实现任意一个
-    attr: Attributes = Depends() # CharacterCard.Attribute
-    wiki: Wiki = Depends() # Wiki
-    cmd: Command = Depends() # Command
-    
+    attr: Attributes = Depends()  # CharacterCard.Attribute
+    wiki: Wiki = Depends()  # Wiki
+    cmd: Command = Depends()  # Command  # noqa: F821
+
     @core.event_postprocessor_hook
     async def auto_card(self):
         if self.session and self.session.gid and self.ac:
@@ -26,7 +27,8 @@ class COC7(Rule):
                 )
 
     async def overview_card(self):
-        max_hp = math.floor((self.pc.get("CON", 0) + self.pc.get("SIZ", 0) / 10))
+        max_hp = math.floor(
+            (self.pc.get("CON", 0) + self.pc.get("SIZ", 0) / 10))
         max_san = math.floor(99 - self.pc.get("CM", 0))
         mp = self.pc.get("MP", 0)
         mp_show = (

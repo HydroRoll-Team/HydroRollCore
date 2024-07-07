@@ -145,7 +145,7 @@ class Rule(ABC, Generic[EventT, StateT, ConfigT]):
     async def handle(self) -> None:
         """Method to handle events. iamai will call this method when the ``rule()`` method returns ``True``. Each plugin must implement this method."""
         raise NotImplementedError
-  
+
     @abstractmethod
     async def rule(self) -> bool:
         """Method to match the event. When the event is processed, this method will be called in sequence according to the priority of the plugin. When this method returns ``True``, the event will be handed over to this plugin for processing. Each plugin must implement this method.
