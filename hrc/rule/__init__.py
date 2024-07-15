@@ -154,6 +154,12 @@ class Rule(ABC, Generic[EventT, StateT, ConfigT]):
             It is not recommended to implement event processing directly in this method. Please leave the specific processing of events to the ``handle()`` method.
         """
         raise NotImplementedError
+    
+    @staticmethod
+    async def enable(): ...
+    
+    @staticmethod
+    async def disable(): ...
 
     @staticmethod
     def aliases(names, ignore_case=False):

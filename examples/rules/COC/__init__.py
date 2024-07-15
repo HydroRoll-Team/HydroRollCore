@@ -17,6 +17,10 @@ class COC7(Rule):
     attr: Attributes = Depends()  # CharacterCard.Attribute
     wiki: Wiki = Depends()  # Wiki
     cmd: Command = Depends()  # Command  # noqa: F821
+    
+    async def handle(self): ...
+    
+    async def rule(self): ...
 
     @core.event_postprocessor_hook
     async def auto_card(self):
@@ -50,3 +54,9 @@ class COC7(Rule):
             + " DEX"
             + str(self.pc.get("DEX", "?"))
         )
+
+
+class COC6(Rule): 
+    async def handle(self): ...
+    
+    async def rule(self): ...
