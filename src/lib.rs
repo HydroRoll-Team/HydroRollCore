@@ -2,16 +2,6 @@ use clap::builder::Str;
 use pyo3::prelude::*;
 use pyo3::wrap_pyfunction;
 
-use dev::*;
-use doc::*;
-use feat::*;
-use perf::*;
-
-pub mod dev;
-pub mod doc;
-pub mod feat;
-pub mod perf;
-
 #[pyfunction]
 fn process_rule_pack(rule_pack: &str) -> PyResult<String> {
     // 处理规则包的逻辑
