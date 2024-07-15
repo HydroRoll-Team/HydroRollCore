@@ -512,18 +512,6 @@ class Core:
         rule_load_type: Optional[RuleLoadType] = None,
         reload: bool = False,
     ) -> None:
-        """Load rules.
-
-        Args:
-            *rules: plug-in class, plug-in module name or plug-in module file path. Type can be ``Type[rule]``, ``str`` or ``pathlib.Path``.
-                If it is ``Type[rule]``, it will be loaded as a plug-in class.
-                If it is of type ``str``, it will be loaded as the plug-in module name, and the format is the same as the Python ``import`` statement.
-                    For example: ``path.of.rule``.
-                If it is of type ``pathlib.Path``, it will be loaded as the plug-in module file path.
-                    For example: ``pathlib.Path("path/of/rule")``.
-            rule_load_type: Plug-in loading type, if it is ``None``, it will be automatically determined, otherwise the specified type will be used.
-            reload: Whether to reload the module.
-        """
         for rule_ in rules:
             try:
                 if isinstance(rule_, type) and issubclass(rule_, Rule):
@@ -585,28 +573,11 @@ class Core:
     def load_rules(
         self, *rules: Union[Type[Rule[Any, Any, Any]], str, Path]
     ) -> None:
-        """Load the rule.
-
-        Args:
-            *rules: ``rule`` class, rule module name or plug-in module file path.
-                Type can be ``Type[rule]``, ``str`` or ``pathlib.Path``.
-                If it is ``Type[rule]``, it will be loaded as a plug-in class.
-                If it is of type ``str``, it will be loaded as the plug-in module name, and the format is the same as the Python ``import`` statement.
-                    For example: ``path.of.rule``.
-                If it is of type ``pathlib.Path``, it will be loaded as the plug-in module file path.
-                    For example: ``pathlib.Path("path/of/rule")``.
-        """
         self._extend_rules.extend(rules)
 
         return self._load_rules(*rules)
 
     def _load_rules_from_dirs(self, *dirs: Path) -> None:
-        """Load plug-ins from the directory. Plug-ins in modules starting with ``_`` will not be imported. The path can be a relative path or an absolute path.
-
-        Args:
-            *dirs: Module paths that store modules containing rules.
-                For example: ``pathlib.Path("path/of/rules/")`` .
-        """
         dir_list = [str(x.resolve()) for x in dirs]
         logger.info(
             f'Loading rules from dirs "{", ".join(map(str, dir_list))}"')
@@ -618,12 +589,6 @@ class Core:
                 )
 
     def load_rules_from_dirs(self, *dirs: Path) -> None:
-        """Load plug-ins from the directory. Plug-ins in modules starting with ``_`` will not be imported. The path can be a relative path or an absolute path.
-
-        Args:
-            *dirs: Module paths that store modules containing rules.
-                For example: ``pathlib.Path("path/of/rules/")`` .
-        """
         self._extend_rule_dirs.extend(dirs)
         self._load_rules_from_dirs(*dirs)
 

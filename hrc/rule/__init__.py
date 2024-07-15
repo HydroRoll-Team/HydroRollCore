@@ -7,7 +7,7 @@ from . import BaseRule  # noqa: F401
 from ..typing import RuleT  # noqa: F401
 
 import inspect
-from abc import abstractmethod
+from abc import abstractmethod  # noqa: F401
 from enum import Enum
 from typing import (
     TYPE_CHECKING,
@@ -140,20 +140,6 @@ class Rule(ABC, Generic[EventT, StateT, ConfigT]):
     @final
     def state(self, value: StateT) -> None:
         self.core.rule_state[self.name] = value
-
-    @abstractmethod
-    async def handle(self) -> None:
-        """Method to handle events. iamai will call this method when the ``rule()`` method returns ``True``. Each plugin must implement this method."""
-        raise NotImplementedError
-
-    @abstractmethod
-    async def rule(self) -> bool:
-        """Method to match the event. When the event is processed, this method will be called in sequence according to the priority of the plugin. When this method returns ``True``, the event will be handed over to this plugin for processing. Each plugin must implement this method.
-
-        .. note::
-            It is not recommended to implement event processing directly in this method. Please leave the specific processing of events to the ``handle()`` method.
-        """
-        raise NotImplementedError
     
     @staticmethod
     async def enable(): ...
