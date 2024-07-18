@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.0.3] - 2024-07-18
+### BREAKING CHANGES
+- due to [`c6f28bd`](https://github.com/HydroRoll-Team/HydroRollCore/commit/c6f28bd75141da583bdd95e86d37ae5884276c55) - change namespace<perf, feat, doc, dev> *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*:
+
+  change namespace<perf, feat, doc, dev>
+
+
+### New Features
+- [`fae8d22`](https://github.com/HydroRoll-Team/HydroRollCore/commit/fae8d2273dfad2dd0cf9709f15e24640e7ebfd8d) - **Improve the underlying business directory**: Improve the underlying business directory *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*
+
+### Refactors
+- [`c6f28bd`](https://github.com/HydroRoll-Team/HydroRollCore/commit/c6f28bd75141da583bdd95e86d37ae5884276c55) - change namespace<perf, feat, doc, dev> *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*
+- [`0f39a9d`](https://github.com/HydroRoll-Team/HydroRollCore/commit/0f39a9dfbbb98975c4cc054f98fd7cb14b7e8fb7) - Remove useless code *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*
+- [`14368e5`](https://github.com/HydroRoll-Team/HydroRollCore/commit/14368e5a7bdcc4b6d3b151ecd9cb3162c30f292e) - Comment hook function while running the rules packages *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*
+
+### Chores
+- [`9c06867`](https://github.com/HydroRoll-Team/HydroRollCore/commit/9c068671612655855368bdec569fb7be5890e9d7) - Remove unecessary folder tree *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*
+- [`4e89d4a`](https://github.com/HydroRoll-Team/HydroRollCore/commit/4e89d4a1b9b5e35ff4bdc9bdafaa5e9d68d3d83a) - Bump version into 0.0.3 *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*
+
+
 ## [v0.0.2-alpha.2] - 2024-06-26
 ### BREAKING CHANGES
 - due to [`f38ab2f`](https://github.com/HydroRoll-Team/HydroRollCore/commit/f38ab2f073cc6599ef4d4248a00fe07a74d0e63b) - revert for two previous commit *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*:
@@ -40,3 +60,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [`08025ec`](https://github.com/HydroRoll-Team/HydroRollCore/commit/08025ec6b32078840e26d4584a7e79ad12cd62f2) - **project**: bump version to 0.0.2-alpha.2 *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*
 
 [v0.0.2-alpha.2]: https://github.com/HydroRoll-Team/HydroRollCore/compare/v99.99.99...v0.0.2-alpha.2
+[v0.0.3]: https://github.com/HydroRoll-Team/HydroRollCore/compare/v0.0.2...v0.0.3
