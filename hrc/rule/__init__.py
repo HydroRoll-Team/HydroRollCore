@@ -140,12 +140,10 @@ class Rule(ABC, Generic[EventT, StateT, ConfigT]):
     @final
     def state(self, value: StateT) -> None:
         self.core.rule_state[self.name] = value
-    
-    @staticmethod
-    async def enable(): ...
-    
-    @staticmethod
-    async def disable(): ...
+
+    async def enable(self): ...
+
+    async def disable(self): ...
 
     @staticmethod
     def aliases(names, ignore_case=False):
@@ -155,3 +153,12 @@ class Rule(ABC, Generic[EventT, StateT, ConfigT]):
             return func
 
         return decorator
+
+    @final
+    async def safe_run(self) -> None:
+        try:
+            await self.enable()
+        except Exception as e:
+            self.bot.error_or_exception(
+                f"Enable rule  {self.__class__.__name__} failed:", e
+            )

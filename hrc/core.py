@@ -158,31 +158,34 @@ class Core:
             await core_run_hook_func(self)
 
         try:
-            for _rule in self.rules:
-                for rule_enable_hook_func in self._rule_enable_hooks:
-                    await rule_enable_hook_func(_rule)
-                try:
-                    await _rule.enable()
-                except Exception as e:
-                    self.error_or_exception(
-                        f"Enable rule {_rule!r} failed:", e)
+            ##########################################################
+            # @TODO: builtin hook function in every rules packages.
+            ##########################################################
+            # for _rule in self.rules:
+            #     for rule_enable_hook_func in self._rule_enable_hooks:
+            #         await rule_enable_hook_func(_rule)
+            #     try:
+            #         await _rule.enable()
+            #     except Exception as e:
+            #         self.error_or_exception(
+            #             f"Enable rule {_rule!r} failed:", e)
 
-            for _rule in self.rules:
-                for rule_run_hook_func in self._rule_run_hooks:
-                    await rule_run_hook_func(_rule)
-                _rule_task = asyncio.create_task(_rule.safe_run())
-                self._rule_tasks.add(_rule_task)
-                _rule_task.add_done_callback(self._rule_tasks.discard)
+            # for _rule in self.rules:
+            #     for rule_run_hook_func in self._rule_run_hooks:
+            #         await rule_run_hook_func(_rule)
+            #     _rule_task = asyncio.create_task(_rule.safe_run())
+            #     self._rule_tasks.add(_rule_task)
+            #     _rule_task.add_done_callback(self._rule_tasks.discard)
 
             await self.should_exit.wait()
 
             if hot_reload_task is not None:  # pragma: no cover
                 await hot_reload_task
         finally:
-            for _rule in self.rules:
-                for rule_disable_hook_func in self._rule_disable_hooks:
-                    await rule_disable_hook_func(_rule)
-                await _rule.disable()
+            # for _rule in self.rules:
+            #     for rule_disable_hook_func in self._rule_disable_hooks:
+            #         await rule_disable_hook_func(_rule)
+            #     await _rule.disable()
 
             while self._rule_tasks:
                 await asyncio.sleep(0)
