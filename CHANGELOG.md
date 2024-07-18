@@ -24,6 +24,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [`4e89d4a`](https://github.com/HydroRoll-Team/HydroRollCore/commit/4e89d4a1b9b5e35ff4bdc9bdafaa5e9d68d3d83a) - Bump version into 0.0.3 *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*
 
 
+## [v0.0.2] - 2024-07-06
+### BREAKING CHANGES
+- due to [`0ed1048`](https://github.com/HydroRoll-Team/HydroRollCore/commit/0ed10486f719c23ab7e0e84d2e119a7fa5f70475) - rewrite core business logic *(commit by @HsiangNianian)*:
+
+  rewrite core business logic
+
+- due to [`9f7019a`](https://github.com/HydroRoll-Team/HydroRollCore/commit/9f7019a860d3ff10b0f2cf885d8b9df547a6fa5e) - fix AttributeError: wrong '_run_core_reload' method *(commit by @HsiangNianian)*:
+
+  fix AttributeError: wrong '_run_core_reload' method
+
+- due to [`da32df8`](https://github.com/HydroRoll-Team/HydroRollCore/commit/da32df814f9949c7172290dfb4770f7c64c28a5d) - rewrite side bar structures *(commit by @HsiangNianian)*:
+
+  rewrite side bar structures
+
+
+### New Features
+- [`a0ebfdc`](https://github.com/HydroRoll-Team/HydroRollCore/commit/a0ebfdc2cf5f37c40caedcd1dfdcef9660b08f69) - **BaseRule**: add Character.py *(commit by @HsiangNianian)*
+- [`e8fc106`](https://github.com/HydroRoll-Team/HydroRollCore/commit/e8fc106776d066e4d8f36e6ea84e5cc98742abff) - **rules**: add decorator: aliases for class attribute property *(commit by @HsiangNianian)*
+- [`87f0d8f`](https://github.com/HydroRoll-Team/HydroRollCore/commit/87f0d8fbc019b65ff942b415b107293a1024fe1d) - **exception**: enrich exceptions:: EventException, SkipException, StopException, CoreException, GetEventTimeOut, LoudModuleError *(commit by @HsiangNianian)*
+- [`e44fe8d`](https://github.com/HydroRoll-Team/HydroRollCore/commit/e44fe8dfba3a56da39f444cfeb62acd0945a9462) - **core**: impl hot reload *(commit by @HsiangNianian)*
+
+### Bug Fixes
+- [`a53bc2d`](https://github.com/HydroRoll-Team/HydroRollCore/commit/a53bc2df778248a81d7d2f25bbe03223912efcdc) - repair incorrect module import path *(commit by @HsiangNianian)*
+- [`1b0d676`](https://github.com/HydroRoll-Team/HydroRollCore/commit/1b0d67664557e6f0b4a421e1183cee1b0dbca2d3) - **core**: import missed  module in core.py *(commit by @HsiangNianian)*
+
+### Refactors
+- [`2827c09`](https://github.com/HydroRoll-Team/HydroRollCore/commit/2827c09958aa6778e4499d34f5949d6f5677f2c6) - hrc.rules - > hrc.rule *(commit by @HsiangNianian)*
+- [`23ab264`](https://github.com/HydroRoll-Team/HydroRollCore/commit/23ab264ebe52bd050e02c5c6a009645a252a5ea0) - **rule**: change self.state with self.core.rule_state logic *(commit by @HsiangNianian)*
+- [`c0518c1`](https://github.com/HydroRoll-Team/HydroRollCore/commit/c0518c138914b321d0fa2d7b0d1377f78ff85b3c) - rename as get_plugin() method *(commit by @HsiangNianian)*
+- [`0ed1048`](https://github.com/HydroRoll-Team/HydroRollCore/commit/0ed10486f719c23ab7e0e84d2e119a7fa5f70475) - rewrite core business logic *(commit by @HsiangNianian)*
+- [`9f7019a`](https://github.com/HydroRoll-Team/HydroRollCore/commit/9f7019a860d3ff10b0f2cf885d8b9df547a6fa5e) - **core**: fix AttributeError: wrong '_run_core_reload' method *(commit by @HsiangNianian)*
+- [`7e655c9`](https://github.com/HydroRoll-Team/HydroRollCore/commit/7e655c96fa5fab04bde014b62c8db3f4b352a5dc) - **core**: fix AttributeError: wrong 'rule_disable_hook_func' method *(commit by @HsiangNianian)*
+
+### Chores
+- [`2c769a1`](https://github.com/HydroRoll-Team/HydroRollCore/commit/2c769a1958feff811424410291edd7686af40d89) - **docs**: Update README.rst *(commit by @HsiangNianian)*
+- [`fce296c`](https://github.com/HydroRoll-Team/HydroRollCore/commit/fce296c7b4c92506a5ed92af83425dc80f4d1486) - add dist into .gitignore file *(commit by @HsiangNianian)*
+- [`0f74df0`](https://github.com/HydroRoll-Team/HydroRollCore/commit/0f74df0e709672118f06cec1c6fdd02ccfa31e63) - **file tree**: add CustomRule class in hrc.rules.BaseRule *(commit by @HsiangNianian)*
+- [`890a7a2`](https://github.com/HydroRoll-Team/HydroRollCore/commit/890a7a28f4c9075a32240725cd2b51636cab5c1e) - commented unused code *(commit by @HsiangNianian)*
+- [`11f4bff`](https://github.com/HydroRoll-Team/HydroRollCore/commit/11f4bffa9934838198330be7deafb04151ea00b9) - **examples**: remove commented code *(commit by @HsiangNianian)*
+- [`9558df0`](https://github.com/HydroRoll-Team/HydroRollCore/commit/9558df091151d58aa7433c79ac3b8e050674c6fc) - move COC7 folder into rules folder *(commit by @HsiangNianian)*
+
+
 ## [v0.0.2-alpha.2] - 2024-06-26
 ### BREAKING CHANGES
 - due to [`f38ab2f`](https://github.com/HydroRoll-Team/HydroRollCore/commit/f38ab2f073cc6599ef4d4248a00fe07a74d0e63b) - revert for two previous commit *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*:
@@ -60,4 +102,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [`08025ec`](https://github.com/HydroRoll-Team/HydroRollCore/commit/08025ec6b32078840e26d4584a7e79ad12cd62f2) - **project**: bump version to 0.0.2-alpha.2 *(commit by [@HsiangNianian](https://github.com/HsiangNianian))*
 
 [v0.0.2-alpha.2]: https://github.com/HydroRoll-Team/HydroRollCore/compare/v99.99.99...v0.0.2-alpha.2
+[v0.0.2]: https://github.com/HydroRoll-Team/HydroRollCore/compare/v0.0.2-alpha.2...v0.0.2
 [v0.0.3]: https://github.com/HydroRoll-Team/HydroRollCore/compare/v0.0.2...v0.0.3
