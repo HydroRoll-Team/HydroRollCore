@@ -1,3 +1,2 @@
 from .character import Character
-
-__all__ = ["Character"]
+from .grps import v1

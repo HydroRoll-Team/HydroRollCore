@@ -433,7 +433,7 @@ class Core:
                             rule_state = _rule.__init_state__()
                             if rule_state is not None:
                                 self.rule_state[_rule.name] = rule_state
-                        # TODO(简律纯): Refactor event handle process
+                        # TODO(简律纯): Refactor event handle process with General Rules Package Standard
                         if await _rule.rule():
                             logger.info(f"Event will be handled by {_rule!r}")
                             try:
