@@ -158,9 +158,7 @@ class Core:
             await core_run_hook_func(self)
 
         try:
-            ##########################################################
-            # @TODO: builtin hook function in every rules packages.
-            ##########################################################
+            # TODO: builtin rule enable hook function in every rules packages.
             # for _rule in self.rules:
             #     for rule_enable_hook_func in self._rule_enable_hooks:
             #         await rule_enable_hook_func(_rule)
@@ -169,7 +167,7 @@ class Core:
             #     except Exception as e:
             #         self.error_or_exception(
             #             f"Enable rule {_rule!r} failed:", e)
-
+            # TODO: builtin rule run hook function in every rules packages.
             # for _rule in self.rules:
             #     for rule_run_hook_func in self._rule_run_hooks:
             #         await rule_run_hook_func(_rule)
@@ -182,6 +180,7 @@ class Core:
             if hot_reload_task is not None:  # pragma: no cover
                 await hot_reload_task
         finally:
+            # TODO: builtin rule disable hook function in every rules packages.
             # for _rule in self.rules:
             #     for rule_disable_hook_func in self._rule_disable_hooks:
             #         await rule_disable_hook_func(_rule)
@@ -434,6 +433,7 @@ class Core:
                             rule_state = _rule.__init_state__()
                             if rule_state is not None:
                                 self.rule_state[_rule.name] = rule_state
+                        # TODO: Refactor event handle process
                         if await _rule.rule():
                             logger.info(f"Event will be handled by {_rule!r}")
                             try:
