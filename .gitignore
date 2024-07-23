@@ -21,3 +21,6 @@ _build/
 
 # rule book
 rule_book/
+
+# lib core
+hrc/LibCore.py
