@@ -94,7 +94,7 @@ class Core:
         self._raw_config_dict = {}
         self._rule_tasks = set()
         self._handle_event_tasks = set()
-        
+
         self._extend_rules = []
         self._extend_rule_dirs = []
         self._core_run_hooks = []
