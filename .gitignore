@@ -24,3 +24,10 @@ rule_book/
 
 # lib core
 hrc/LibCore.py
+
+# ruff
+.ruff_cache/
+
+# nox
+.nox/
+logs/
