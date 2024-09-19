@@ -10,7 +10,6 @@ from .Command import Command
 
 core = Core()
 
-
 class COC7(Rule):
 
     # 规则、指令、词条，必须至少实现任意一个

@@ -1,6 +1,7 @@
 import os
 import sys
 from datetime import datetime
+from typing import Optional
 
 from loguru import logger as _logger
 
@@ -11,13 +12,9 @@ log_path = os.path.join(
     current_path, "logs", datetime.now().strftime("%Y-%m-%d") + ".log"
 )
 
-
-def error_or_exception(message: str, exception: Exception, verbose: bool):
+def error_or_exception(message: str, exception: Optional[Exception], verbose: bool = True):
     logger.remove()
-    logger.add(
-        sys.stderr,
-        format="<magenta>{time:YYYY-MM-DD HH:mm:ss.SSS}</magenta> <level>[{level}]</level> > <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>",
-    )
+    logger.add(sys.stderr)
     logger.add(sink=log_path, level="INFO", rotation="10 MB")
     if verbose:
         logger.exception(message)

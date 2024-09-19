@@ -3,8 +3,8 @@ from typing import Generic, Any, Type
 
 from abc import ABC
 
-from . import BaseRule  # noqa: F401
-from ..typing import RuleT  # noqa: F401
+from hrc.rule import BaseRule  # noqa: F401
+from hrc.typing import RuleT  # noqa: F401
 
 import inspect
 from abc import abstractmethod  # noqa: F401
@@ -20,16 +20,16 @@ from typing import (
 )
 from typing_extensions import Annotated, get_args, get_origin
 
-from ..config import ConfigModel
+from hrc.config import ConfigModel
 
-from ..dependencies import Depends
-from ..event import Event
-from ..exceptions import SkipException, StopException
-from ..typing import ConfigT, EventT, StateT
-from ..utils import is_config_class
+from hrc.dependencies import Depends
+from hrc.event import Event
+from hrc.exceptions import SkipException, StopException
+from hrc.typing import ConfigT, EventT, StateT
+from hrc.utils import is_config_class
 
 if TYPE_CHECKING:
-    from ..core import Core
+    from hrc.core import Core
 
 
 class RuleLoadType(Enum):

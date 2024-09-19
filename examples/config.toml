@@ -1,2 +1,6 @@
 [core]
 rule_dirs = ["rules"]
+services = ['hrc.service.http']
+
+[service.http]
+port = 8080

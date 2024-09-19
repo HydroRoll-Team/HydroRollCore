@@ -1,4 +1,4 @@
-from typing import Set, Union
+from typing import Literal, Optional, Set, Union
 
 from pydantic import BaseModel, ConfigDict, DirectoryPath, Field
 
@@ -14,16 +14,21 @@ class LogConfig(ConfigModel):
     verbose_exception: bool = False
 
 
+class ServiceConfig(ConfigModel):
+    """Service configuration."""
+
+
 class CoreConfig(ConfigModel):
     rules: Set[str] = Field(default_factory=set)
     rule_dirs: Set[DirectoryPath] = Field(default_factory=set)
     log: LogConfig = LogConfig()
-
+    services: Set[str] = Field(default_factory=set)
 
 class RuleConfig(ConfigModel):
-    """rule configuration."""
-
-
+    """Rule configuration."""
+    
+    
 class MainConfig(ConfigModel):
     core: CoreConfig = CoreConfig()
     rule: RuleConfig = RuleConfig()
+    service: ServiceConfig = ServiceConfig()

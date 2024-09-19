@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING, Any, Generic, Optional, Union
 from typing_extensions import Self
 
 from pydantic import BaseModel, ConfigDict
-from .typing import RuleT
+from hrc.typing import RuleT
 
 
 class Event(ABC, BaseModel, Generic[RuleT]):
@@ -62,20 +62,6 @@ class MessageEvent(Event[RuleT], Generic[RuleT]):
         max_try_times: Optional[int] = None,
         timeout: Optional[Union[int, float]] = None,
     ) -> Self:
-        """Get the user's reply message.
-
-        Equivalent to `get()` of ``Bot``, the condition is that the adapter, event type and sender are the same.
-
-        Args:
-            max_try_times: Maximum number of events.
-            timeout: timeout period.
-
-        Returns:
-            Message event that the user replies to.
-
-        Raises:
-            GetEventTimeout: Maximum number of events exceeded or timeout.
-        """
 
         return await self.rule.get(
             self.is_same_sender,

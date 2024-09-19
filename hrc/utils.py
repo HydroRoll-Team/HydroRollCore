@@ -37,8 +37,8 @@ from typing_extensions import ParamSpec, TypeAlias, TypeGuard
 
 from pydantic import BaseModel
 
-from .config import ConfigModel
-from .typing import EventT
+from hrc.config import ConfigModel
+from hrc.typing import EventT
 
 if TYPE_CHECKING:
     from os import PathLike

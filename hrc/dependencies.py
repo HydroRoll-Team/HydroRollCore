@@ -15,7 +15,7 @@ from typing import (
     cast,
 )
 
-from .utils import get_annotations, sync_ctx_manager_wrapper
+from hrc.utils import get_annotations, sync_ctx_manager_wrapper
 
 _T = TypeVar("_T")
 Dependency = Union[
@@ -45,12 +45,9 @@ class InnerDepends:
         attr = getattr(self.dependency, "__name__", type(self.dependency).__name__)
         cache = "" if self.use_cache else ", use_cache=False"
         return f"InnerDepends({attr}{cache})"
-
-
-def Depends(  # noqa: N802 # pylint: disable=invalid-name
-    dependency: Optional[Dependency[_T]] = None, *, use_cache: bool = True
-) -> _T:
-
+        
+        
+def Depends(dependency: Optional[Dependency[_T]] = None, *, use_cache: bool = True) -> _T:
     return InnerDepends(dependency=dependency, use_cache=use_cache)  # type: ignore
 
 
