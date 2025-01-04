@@ -1,6 +1,6 @@
-from hrc import LibCore
+from hrc import _core
 
-cb = LibCore
+cb = _core
 
 
 def main():

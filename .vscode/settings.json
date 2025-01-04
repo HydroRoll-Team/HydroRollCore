@@ -4,5 +4,7 @@
     "livePreview.defaultPreviewPath": "/docs/_build/html/index.html",
     "Lua.diagnostics.disable": [
         "doc-field-no-class"
-    ]
+    ],
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.autoImportCompletions": true
 }
